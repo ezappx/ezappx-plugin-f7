@@ -36,26 +36,12 @@ export default (editor, opts = {}) => {
       defaults: {
         ...defaultModel.prototype.defaults,
         script: function () {
-          // var app = new Framework7({
-          //   // App root element
-          //   root: '#app',
-          //   // App Name
-          //   name: '${config.appName}',
-          //   // App id
-          //   id: 'com.ezappx.${config.appName}',
-          //   // Enable swipe panel
-          //   panel: {
-          //     swipe: 'left',
-          //   },
-          // });
-
-          // FIXME app应当是全局变量，否则其他组件无法访问
           var script = document.createElement("script");
           script.type = "text/javascript";
           script.innerHTML = `
           var app = new Framework7({
             root: '#app',
-            name: 'config.appName}',
+            name: 'config.appName',
             id: 'com.ezappx.config.appName',
             panel: {
                 swipe: 'left',
@@ -214,7 +200,7 @@ export default (editor, opts = {}) => {
     });
 
   // form button
-  domc.addType('f7-form-button',
+  domc.addType('f7-fill-form-button',
     {
       model: defaultConentModel.extend(
         {
@@ -224,8 +210,8 @@ export default (editor, opts = {}) => {
               var $$ = Dom7;
               $$('.fill-form-from-data').on('click', function () {
                 var formData = {
-                  'name': 'John',
-                  'email': 'john@doe.com',
+                  'name': 'Ezappx',
+                  'email': 'dev@ezappx.com',
                   'gender': 'female',
                   'toggle': ['yes'],
                 }
@@ -247,26 +233,64 @@ export default (editor, opts = {}) => {
         },
         {
           isComponent: function (el) {
-            if ($(el).attr(EZAPPX_COMPONENT_TYPE) == 'f7-form-button') {
-              return { type: 'f7-form-button' };
+            if ($(el).attr(EZAPPX_COMPONENT_TYPE) == 'f7-fill-form-button') {
+              return { type: 'f7-fill-form-button' };
             }
           },
         }),
 
       view: defaultConentView.extend({
-        // events: {
-        //   'click': 'handleClick'
-        // },
-
         init() {
           const sm = this.model.em.get('SelectorManager');
           this.model.get('classes').add(sm.add('fill-form-from-data'));
           this.model.get('classes').add(sm.add('button'));
         },
+      })
+    });
 
-        // handleClick(e) {
-        //   e.preventDefault();
-        // }
+  // form button
+  domc.addType('f7-get-form-button',
+    {
+      model: defaultConentModel.extend(
+        {
+          defaults: {
+            ...defaultConentModel.prototype.defaults,
+            script: function () {
+              var $$ = Dom7;
+
+              $$('.convert-form-to-data').on('click', function () {
+                var formData = app.form.convertToData('#my-form');
+                alert(JSON.stringify(formData));
+              });
+
+            },
+            traits: defaultConentModel.prototype.defaults.traits.concat([{
+              type: 'class',
+              label: '按钮样式',
+              name: 'class',
+              options: [
+                { value: '', name: '默认' },
+                { value: 'button-fill', name: '实色' },
+                { value: 'button-raised', name: '阴影' },
+              ],
+            }
+            ])
+          },
+        },
+        {
+          isComponent: function (el) {
+            if ($(el).attr(EZAPPX_COMPONENT_TYPE) == 'f7-get-form-button') {
+              return { type: 'f7-get-form-button' };
+            }
+          },
+        }),
+
+      view: defaultConentView.extend({
+        init() {
+          const sm = this.model.em.get('SelectorManager');
+          this.model.get('classes').add(sm.add('convert-form-to-data'));
+          this.model.get('classes').add(sm.add('button'));
+        },
       })
     });
 }

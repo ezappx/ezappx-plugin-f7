@@ -3,7 +3,6 @@ export default function (editor, opt = {}) {
   const textTrat = trm.getType('text');
 
   const bm = editor.BlockManager;
-  // const _ = require("underscore")
 
   trm.addType('content', {
     events: {
@@ -40,9 +39,9 @@ export default function (editor, opt = {}) {
       });
       console.log('change button style to', label);
       if (label) {
-        _.each(label.split(" "), el => {
-          compCls.add(sm.add(el));
-        })
+        $.each(label.split(" "), function(i, v) {
+          compCls.add(sm.add(v));
+        });
         parentModel.trigger('targetClassAdded');
       }
     },

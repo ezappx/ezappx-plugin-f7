@@ -1,6 +1,6 @@
 {
   "name": "ezappx-plugin-f7",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "description": "ezappx-plugin-f7",
   "main": "dist/ezappx-plugin-f7.min.js",
   "scripts": {

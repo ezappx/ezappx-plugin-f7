@@ -12,7 +12,7 @@ export default (editor, config = {}) => {
 
     bm.add('f7-init', {
         label: 'Init',
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-bug' },
         category: CATEGORY_LAYOUT,
         content: `
                 <div ${EZAPPX_COMPONENT_TYPE}='f7-init' id=app>
@@ -32,7 +32,7 @@ export default (editor, config = {}) => {
 
     bm.add('f7-tabbar', {
         label: 'Tabbar',
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-th-large' },
         category: CATEGORY_LAYOUT,
         draggable: '*',
         content: `
@@ -49,6 +49,16 @@ export default (editor, config = {}) => {
                 </div>
                 <div class='tabs-animated-wrap'>
                     <div class='tabs'>
+                        <div id="tab-1" class="page-content tab tab-active">
+                            <div class="block">
+                            <p>Tab 1 content</p>
+                            </div>
+                        </div>
+                        <div id="tab-2" class="page-content tab">
+                            <div class="block">
+                            <p>Tab 2 content</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 `
@@ -65,7 +75,7 @@ export default (editor, config = {}) => {
 
     bm.add('f7-block', {
         label: 'Block',
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-plus-square-o' },
         category: CATEGORY_LAYOUT,
         content: `
                 <div class="block-title">Columns with gap</div>
@@ -79,7 +89,7 @@ export default (editor, config = {}) => {
 
     bm.add('f7-row', {
         label: 'Row',
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-arrows-h' },
         category: CATEGORY_LAYOUT,
         content: `
             <div class="row">
@@ -91,7 +101,7 @@ export default (editor, config = {}) => {
 
     bm.add('f7-col', {
         label: 'Col',
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-arrows-v' },
         category: CATEGORY_LAYOUT,
         content: `
                 <div class="col" ${EZAPPX_COMPONENT_TYPE}='f7-col'>col</div>
@@ -101,11 +111,11 @@ export default (editor, config = {}) => {
     bm.add('f7-text', {
         label: 'Text',
         category: CATEGORY_BASIC_UI,
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-text-width' },
         content: {
             type: 'text',
             content: 'Insert your text here',
-            style: { padding: '10px' },
+            // style: { padding: '10px' },
             activeOnRender: 1
         },
     });
@@ -113,7 +123,7 @@ export default (editor, config = {}) => {
     bm.add('f7-link', {
         label: 'Link',
         category: CATEGORY_BASIC_UI,
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-link' },
         content: {
             type: 'link',
             content: 'Link',
@@ -123,7 +133,7 @@ export default (editor, config = {}) => {
     bm.add('f7-image', {
         label: 'Image',
         category: CATEGORY_BASIC_UI,
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-image' },
         content: {
             style: { color: 'black' },
             type: 'image',
@@ -134,7 +144,7 @@ export default (editor, config = {}) => {
     bm.add('f7-video', {
         label: 'Video',
         category: CATEGORY_BASIC_UI,
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-youtube-play' },
         content: {
             type: 'video',
             src: 'img/video2.webm',
@@ -157,7 +167,7 @@ export default (editor, config = {}) => {
 
     bm.add('f7-badge', {
         label: 'Badge',
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-dot-circle-o' },
         category: CATEGORY_BASIC_UI,
         content: `
                 <span class="badge" ${EZAPPX_COMPONENT_TYPE}='f7-badge'>0</span>
@@ -166,7 +176,7 @@ export default (editor, config = {}) => {
 
     bm.add('f7-form', {
         label: 'Form',
-        attributes: { class: 'fa fa-square' },
+        attributes: { class: 'fa fa-newspaper-o' },
         category: CATEGORY_FORM,
         content: `
         <form class="list" id="my-form">
@@ -219,9 +229,8 @@ export default (editor, config = {}) => {
         </ul>
       </form>
       <div class="block block-strong row">
-        <div class="col"><a class="button convert-form-to-data" href="#" ${EZAPPX_COMPONENT_TYPE}='f7-form-button'>Get Data</a></div>
-        <div class="col"><a  href="#" ${EZAPPX_COMPONENT_TYPE}='f7-form-button'>Fill Form</a></div>
-      </div>
-                `
+        <div class="col"><a class="button convert-form-to-data" href="#" ${EZAPPX_COMPONENT_TYPE}='f7-get-form-button'>Get Data</a></div>
+        <div class="col"><a  href="#" ${EZAPPX_COMPONENT_TYPE}='f7-fill-form-button'>Fill Form</a></div>
+      </div>`
     });
 }
