@@ -1,6 +1,6 @@
 {
   "name": "ezappx-plugin-f7",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "ezappx-plugin-f7",
   "main": "dist/ezappx-plugin-f7.min.js",
   "scripts": {
@@ -14,12 +14,11 @@
     "url": ""
   },
   "keywords": [
-    "grapesjs",
+    "ezappx",
     "plugin",
-    "boilerplate",
-    "wysiwyg"
+    "f7"
   ],
-  "author": "Artur Arseniev",
+  "author": "ingbyr",
   "license": "BSD-3-Clause",
   "babel": {
     "presets": [

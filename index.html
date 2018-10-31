@@ -11,11 +11,11 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/ingbyr/ezappx-plugin-toolbar/dist/ezapp-plugin-toolbar.min.js"></script>
-  <script src="dist/ezappx-plugin-f7.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.9.2/ckeditor.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/ckeditor@4.9.2/ckeditor.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/grapesjs-plugin-ckeditor@0.0.9/dist/grapesjs-plugin-ckeditor.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/ezappx-plugin-toolbar/dist/ezappx-plugin-toolbar.min.js"></script>
+  <script src="dist/ezappx-plugin-f7.min.js"></script>
 
   <style>
     body,html {
@@ -57,7 +57,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>所得即所得（WYSIWYG）的移动应用开发环境</p>
+          <p>所得即所得（WYSIWYG）的移动应用开发环境，目前处于开发阶段，请勿存储重要数据。</p>
         </div>
       </div>
     </div>
@@ -73,13 +73,13 @@
       fromElement: true,
 
       plugins: [
-        'ezapp-plugin-toolbar',
+        'ezappx-plugin-toolbar',
         'ezappx-plugin-f7',
         'grapesjs-plugin-ckeditor',
       ],
 
       pluginsOpts: {
-        'ezapp-plugin-toolbar': {
+        'ezappx-plugin-toolbar': {
           clearCanvas: {
             id: '#clear-canvas',
             confirmBtnId: '#confirm-clear-canvas',

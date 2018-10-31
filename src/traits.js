@@ -94,7 +94,7 @@ export default function (editor, opt = {}) {
 
   trm.addType('createPage', {
     events: {
-      'keyup': 'onChange',
+      'focusout': 'onChange',
     },
 
     onValueChange: function () {
