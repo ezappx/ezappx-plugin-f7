@@ -18,13 +18,13 @@ export default (editor, opts = {}) => {
   // Add traits
   loadTraits(editor, options);
 
-  // editor.on('load', () => {
-  //   var dom = editor.DomComponents.getComponents();
-  //   // Dom中不存在元素时自动添加f7初始化Block
-  //   if (dom.length == 0) {
-  //     var initF7 = editor.BlockManager.get('f7-init');
-  //     editor.DomComponents.addComponent(initF7.attributes.content);
-  //     console.log('init f7 framework');
-  //   }
-  // })
+  editor.on('load', () => {
+    var dom = editor.DomComponents.getComponents();
+    // Dom中不存在元素时自动添加f7初始化Block
+    if (dom.length == 0) {
+      var initF7 = editor.BlockManager.get('f7-init');
+      editor.DomComponents.addComponent(initF7.attributes.content);
+      console.log('init f7 framework');
+    }
+  })
 };
